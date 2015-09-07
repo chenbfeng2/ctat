@@ -52,18 +52,22 @@ public class TwoDigitSubtraction extends JPanel {
 		add(t_Options);
 		
 		GivenNum1FirstDigit = new JCommTextField();
+		GivenNum1FirstDigit.setCommName("GivenNum1FirstDigit");
 		GivenNum1FirstDigit.setBounds(82, 114, 33, 37);
 		add(GivenNum1FirstDigit);
 		
 		GivenNum1SecondDigit = new JCommTextField();
+		GivenNum1SecondDigit.setCommName("GivenNum1SecondDigit");
 		GivenNum1SecondDigit.setBounds(115, 114, 33, 37);
 		add(GivenNum1SecondDigit);
 		
 		GivenNum2firstDigit = new JCommTextField();
+		GivenNum2firstDigit.setCommName("GivenNum2firstDigit");
 		GivenNum2firstDigit.setBounds(82, 162, 33, 37);
 		add(GivenNum2firstDigit);
 		
 		GivenNum2SecondDigit = new JCommTextField();
+		GivenNum2SecondDigit.setCommName("GivenNum2SecondDigit");
 		GivenNum2SecondDigit.setBounds(115, 162, 33, 37);
 		add(GivenNum2SecondDigit);
 		
@@ -79,46 +83,57 @@ public class TwoDigitSubtraction extends JPanel {
 		add(commLabel);
 		
 		Borrow = new JCommTextField();
+		Borrow.setCommName("Borrow");
 		Borrow.setBounds(187, 65, 33, 37);
 		add(Borrow);
 		
 		NumberAfterBorrow = new JCommTextField();
+		NumberAfterBorrow.setCommName("NumberAfterBorrow");
 		NumberAfterBorrow.setBounds(187, 114, 33, 37);
 		add(NumberAfterBorrow);
 		
 		FirstDigitUpper = new JCommTextField();
+		FirstDigitUpper.setCommName("FirstDigitUpper");
 		FirstDigitUpper.setBounds(220, 114, 33, 37);
 		add(FirstDigitUpper);
 		
 		FirstDigitLower = new JCommTextField();
+		FirstDigitLower.setCommName("FirstDigitLower");
 		FirstDigitLower.setBounds(220, 162, 33, 37);
 		add(FirstDigitLower);
 		
 		SecondDigitLower = new JCommTextField();
+		SecondDigitLower.setCommName("SecondDigitLower");
 		SecondDigitLower.setBounds(187, 162, 33, 37);
 		add(SecondDigitLower);
 		
 		ConvertedNumSecondUpper = new JCommTextField();
+		ConvertedNumSecondUpper.setCommName("ConvertedNumSecondUpper");
 		ConvertedNumSecondUpper.setBounds(292, 114, 33, 37);
 		add(ConvertedNumSecondUpper);
 		
 		ConvertedNumFirstUpper = new JCommTextField();
+		ConvertedNumFirstUpper.setCommName("ConvertedNumFirstUpper");
 		ConvertedNumFirstUpper.setBounds(325, 114, 33, 37);
 		add(ConvertedNumFirstUpper);
 		
 		ConvertedNumSecondLower = new JCommTextField();
+		ConvertedNumSecondLower.setCommName("ConvertedNumSecondLower");
 		ConvertedNumSecondLower.setBounds(292, 162, 33, 37);
 		add(ConvertedNumSecondLower);
 		
 		ConvertedNumFirstLower = new JCommTextField();
+		ConvertedNumFirstLower.setCommName("ConvertedNumFirstLower");
 		ConvertedNumFirstLower.setBounds(325, 162, 33, 37);
 		add(ConvertedNumFirstLower);
 		
 		FinalAnswerTensStripe = new JCommTextField();
+		FinalAnswerTensStripe.setCommName("FinalAnswerTensStripe");
 		FinalAnswerTensStripe.setBounds(292, 233, 33, 37);
 		add(FinalAnswerTensStripe);
 		
 		FinalAnswerOnesStripe = new JCommTextField();
+		FinalAnswerOnesStripe.setCommName("FinalAnswerOnesStripe");
 		FinalAnswerOnesStripe.setBounds(325, 233, 33, 37);
 		add(FinalAnswerOnesStripe);
 		
