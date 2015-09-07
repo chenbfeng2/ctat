@@ -820,6 +820,8 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>8 cannot be subtracted from a smaller number? Find a way to make it possible.</hintMessage>
+            <hintMessage>Think about borrow 10 from next digit.</hintMessage>
             <hintMessage>Please enter '1' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -880,6 +882,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '8' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -940,6 +943,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1000,6 +1004,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '7' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1060,6 +1065,8 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>what happens to tens stripe after borrrow 1 from itself</hintMessage>
+            <hintMessage>ones stripe borrow 10 from tens stripe means subtracting 1 from tens stripe.</hintMessage>
             <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1120,6 +1127,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1180,6 +1188,8 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>what happens to ones stripe after borrow 10 from tens stripe</hintMessage>
+            <hintMessage>Add 10 to ones stripe</hintMessage>
             <hintMessage>Please enter '17' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1240,6 +1250,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1300,6 +1311,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '8' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1360,6 +1372,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>make digits subtraction without borrow</hintMessage>
             <hintMessage>Please enter '1' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1420,6 +1433,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Make digits subtraction without borrwo</hintMessage>
             <hintMessage>Please enter '9' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1540,6 +1554,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '8' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1600,6 +1615,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1660,6 +1676,7 @@
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
+            <hintMessage>Copy number from previous text box</hintMessage>
             <hintMessage>Please enter '7' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
@@ -1778,7 +1795,7 @@
                     <transaction_id>T988334a6-269f-43ea-9aae-06bd0f8191ff</transaction_id>
                 </properties>
             </message>
-            <buggyMessage>you cannot subtract 8 from 7</buggyMessage>
+            <buggyMessage>you cannot subtract 8 from 7 without borrow 1 from tens stripe.</buggyMessage>
             <successMessage></successMessage>
             <hintMessage>Please enter '0' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
