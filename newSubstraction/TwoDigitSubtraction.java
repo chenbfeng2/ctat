@@ -8,6 +8,7 @@ import edu.cmu.pact.BehaviorRecorder.Controller.CTAT_Options;
 import pact.CommWidgets.HorizontalLine;
 import pact.CommWidgets.JCommLabel;
 import java.awt.Font;
+import pact.CommWidgets.JCommComboBox;
 
 public class TwoDigitSubtraction extends JPanel {
 	private CTAT_Options t_Options;
@@ -36,6 +37,8 @@ public class TwoDigitSubtraction extends JPanel {
 	private JCommLabel commLabel_6;
 	private JCommLabel commLabel_7;
 	private JCommLabel commLabel_8;
+	private CTAT_Options t_Options_1;
+	private JCommTextField commTextField;
 
 	/**
 	 * Create the panel.
@@ -53,22 +56,22 @@ public class TwoDigitSubtraction extends JPanel {
 		
 		GivenNum1FirstDigit = new JCommTextField();
 		GivenNum1FirstDigit.setCommName("GivenNum1FirstDigit");
-		GivenNum1FirstDigit.setBounds(82, 114, 33, 37);
+		GivenNum1FirstDigit.setBounds(55, 114, 33, 37);
 		add(GivenNum1FirstDigit);
 		
 		GivenNum1SecondDigit = new JCommTextField();
 		GivenNum1SecondDigit.setCommName("GivenNum1SecondDigit");
-		GivenNum1SecondDigit.setBounds(115, 114, 33, 37);
+		GivenNum1SecondDigit.setBounds(87, 114, 33, 37);
 		add(GivenNum1SecondDigit);
 		
 		GivenNum2firstDigit = new JCommTextField();
 		GivenNum2firstDigit.setCommName("GivenNum2firstDigit");
-		GivenNum2firstDigit.setBounds(82, 162, 33, 37);
+		GivenNum2firstDigit.setBounds(55, 162, 33, 37);
 		add(GivenNum2firstDigit);
 		
 		GivenNum2SecondDigit = new JCommTextField();
 		GivenNum2SecondDigit.setCommName("GivenNum2SecondDigit");
-		GivenNum2SecondDigit.setBounds(115, 162, 33, 37);
+		GivenNum2SecondDigit.setBounds(87, 162, 33, 37);
 		add(GivenNum2SecondDigit);
 		
 		horizontalLine = new HorizontalLine();
@@ -79,7 +82,7 @@ public class TwoDigitSubtraction extends JPanel {
 		commLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 22));
 		commLabel.setCorrectFont(new Font("Dialog", Font.PLAIN, 9));
 		commLabel.setText("-");
-		commLabel.setBounds(58, 137, 23, 31);
+		commLabel.setBounds(41, 138, 23, 31);
 		add(commLabel);
 		
 		Borrow = new JCommTextField();
@@ -109,42 +112,42 @@ public class TwoDigitSubtraction extends JPanel {
 		
 		ConvertedNumSecondUpper = new JCommTextField();
 		ConvertedNumSecondUpper.setCommName("ConvertedNumSecondUpper");
-		ConvertedNumSecondUpper.setBounds(292, 114, 33, 37);
+		ConvertedNumSecondUpper.setBounds(320, 114, 33, 37);
 		add(ConvertedNumSecondUpper);
 		
 		ConvertedNumFirstUpper = new JCommTextField();
 		ConvertedNumFirstUpper.setCommName("ConvertedNumFirstUpper");
-		ConvertedNumFirstUpper.setBounds(325, 114, 33, 37);
+		ConvertedNumFirstUpper.setBounds(355, 114, 33, 37);
 		add(ConvertedNumFirstUpper);
 		
 		ConvertedNumSecondLower = new JCommTextField();
 		ConvertedNumSecondLower.setCommName("ConvertedNumSecondLower");
-		ConvertedNumSecondLower.setBounds(292, 162, 33, 37);
+		ConvertedNumSecondLower.setBounds(320, 162, 33, 37);
 		add(ConvertedNumSecondLower);
 		
 		ConvertedNumFirstLower = new JCommTextField();
 		ConvertedNumFirstLower.setCommName("ConvertedNumFirstLower");
-		ConvertedNumFirstLower.setBounds(325, 162, 33, 37);
+		ConvertedNumFirstLower.setBounds(355, 162, 33, 37);
 		add(ConvertedNumFirstLower);
 		
 		FinalAnswerTensStripe = new JCommTextField();
 		FinalAnswerTensStripe.setCommName("FinalAnswerTensStripe");
-		FinalAnswerTensStripe.setBounds(292, 233, 33, 37);
+		FinalAnswerTensStripe.setBounds(320, 233, 33, 37);
 		add(FinalAnswerTensStripe);
 		
 		FinalAnswerOnesStripe = new JCommTextField();
 		FinalAnswerOnesStripe.setCommName("FinalAnswerOnesStripe");
-		FinalAnswerOnesStripe.setBounds(325, 233, 33, 37);
+		FinalAnswerOnesStripe.setBounds(355, 233, 33, 37);
 		add(FinalAnswerOnesStripe);
 		
 		commLabel_1 = new JCommLabel();
 		commLabel_1.setText("=");
-		commLabel_1.setBounds(163, 128, 23, 16);
+		commLabel_1.setBounds(139, 128, 23, 16);
 		add(commLabel_1);
 		
 		commLabel_2 = new JCommLabel();
 		commLabel_2.setText("=");
-		commLabel_2.setBounds(163, 170, 23, 16);
+		commLabel_2.setBounds(139, 170, 23, 16);
 		add(commLabel_2);
 		
 		commLabel_3 = new JCommLabel();
@@ -159,23 +162,33 @@ public class TwoDigitSubtraction extends JPanel {
 		
 		commLabel_5 = new JCommLabel();
 		commLabel_5.setText("Given Numbers");
-		commLabel_5.setBounds(69, 81, 106, 33);
+		commLabel_5.setBounds(41, 69, 106, 33);
 		add(commLabel_5);
 		
 		commLabel_6 = new JCommLabel();
 		commLabel_6.setText("Borrows");
-		commLabel_6.setBounds(175, 47, 78, 16);
+		commLabel_6.setBounds(174, 34, 78, 16);
 		add(commLabel_6);
 		
 		commLabel_7 = new JCommLabel();
 		commLabel_7.setText("Converted Numbers");
-		commLabel_7.setBounds(265, 86, 146, 16);
+		commLabel_7.setBounds(277, 79, 146, 16);
 		add(commLabel_7);
 		
 		commLabel_8 = new JCommLabel();
 		commLabel_8.setText("Final Answer");
 		commLabel_8.setBounds(292, 276, 105, 16);
 		add(commLabel_8);
+		
+		t_Options_1 = new CTAT_Options();
+		t_Options_1.setBounds(241, 247, 1, 1);
+		add(t_Options_1);
+		
+		commTextField = new JCommTextField();
+		commTextField.setEditable(true);
+		commTextField.setText("+");
+		commTextField.setBounds(284, 233, 34, 37);
+		add(commTextField);
 	}
 	
 	public static void main(String args[]) { 
