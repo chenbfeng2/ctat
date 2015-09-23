@@ -185,6 +185,7 @@ public class TwoDigitSubtraction extends JPanel {
 		add(t_Options_1);
 		
 		commTextField = new JCommTextField();
+		commTextField.setCommName("sign");
 		commTextField.setEditable(true);
 		commTextField.setBounds(284, 233, 34, 37);
 		add(commTextField);
