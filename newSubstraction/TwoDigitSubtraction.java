@@ -186,7 +186,6 @@ public class TwoDigitSubtraction extends JPanel {
 		
 		commTextField = new JCommTextField();
 		commTextField.setEditable(true);
-		commTextField.setText("+");
 		commTextField.setBounds(284, 233, 34, 37);
 		add(commTextField);
 	}
