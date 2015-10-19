@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 
-<stateGraph firstCheckAllStates="false" caseInsensitive="true" unordered="true" lockWidget="true" version="1.0" suppressStudentFeedback="false">
+<stateGraph firstCheckAllStates="false" caseInsensitive="true" unordered="true" lockWidget="true" hintPolicy="Use Both Kinds of Bias" version="2.1" suppressStudentFeedback="Show All Feedback" highlightRightSelection="true" startStateNodeName="%(startStateNodeName)%" tutorType="Cognitive Tutor (Jess)">
     <startNodeMessages>
         <message>
             <verb>NotePropertySet</verb>
@@ -59,21 +59,6 @@
             </properties>
         </message>
         <message>
-            <verb>NotePropertySet</verb>
-            <properties>
-                <MessageType>InterfaceAction</MessageType>
-                <Selection>
-                    <value>givenNum1</value>
-                </Selection>
-                <Action>
-                    <value>UpdateTextField</value>
-                </Action>
-                <Input>
-                    <value>1</value>
-                </Input>
-            </properties>
-        </message>
-        <message>
             <verb>SendNoteProperty</verb>
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
@@ -86,21 +71,6 @@
                 <jessInstances>
                     <value>(assert (textField (name givenDenom1)))</value>
                 </jessInstances>
-            </properties>
-        </message>
-        <message>
-            <verb>NotePropertySet</verb>
-            <properties>
-                <MessageType>InterfaceAction</MessageType>
-                <Selection>
-                    <value>givenDenom1</value>
-                </Selection>
-                <Action>
-                    <value>UpdateTextField</value>
-                </Action>
-                <Input>
-                    <value>4</value>
-                </Input>
             </properties>
         </message>
         <message>
@@ -119,21 +89,6 @@
             </properties>
         </message>
         <message>
-            <verb>NotePropertySet</verb>
-            <properties>
-                <MessageType>InterfaceAction</MessageType>
-                <Selection>
-                    <value>givenNum2</value>
-                </Selection>
-                <Action>
-                    <value>UpdateTextField</value>
-                </Action>
-                <Input>
-                    <value>1</value>
-                </Input>
-            </properties>
-        </message>
-        <message>
             <verb>SendNoteProperty</verb>
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
@@ -146,21 +101,6 @@
                 <jessInstances>
                     <value>(assert (textField (name givenDenom2)))</value>
                 </jessInstances>
-            </properties>
-        </message>
-        <message>
-            <verb>NotePropertySet</verb>
-            <properties>
-                <MessageType>InterfaceAction</MessageType>
-                <Selection>
-                    <value>givenDenom2</value>
-                </Selection>
-                <Action>
-                    <value>UpdateTextField</value>
-                </Action>
-                <Input>
-                    <value>6</value>
-                </Input>
             </properties>
         </message>
         <message>
@@ -373,6 +313,194 @@
         <message>
             <verb>NotePropertySet</verb>
             <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel8</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>Unreduced Answer</value>
+                </Input>
+                <transaction_id>T43b8a421-6970-4515-9dfc-93c62fe05dd1</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel7</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>Converted Fractions</value>
+                </Input>
+                <transaction_id>T6d8ac7d4-5f09-46ba-af32-08b523add708</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel6</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>Given Fractions</value>
+                </Input>
+                <transaction_id>Tddf485ec-1f5d-45bf-8e85-95635f59d7c0</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel5</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>=</value>
+                </Input>
+                <transaction_id>Tb602188e-63a0-4302-b0a0-70ee05e39961</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel4</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>=</value>
+                </Input>
+                <transaction_id>Taa92549a-ba2a-45b7-9bf7-dfc903ebfcd0</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel3</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>=</value>
+                </Input>
+                <transaction_id>Tade60790-97b6-43c8-a2da-47e90a206d0a</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel2</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>+</value>
+                </Input>
+                <transaction_id>T70285f71-560b-495b-88b8-b54486df498c</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>commLabel1</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>Final Answer</value>
+                </Input>
+                <transaction_id>T54afb42f-7c15-47f3-9da6-033c80973b9f</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>givenNum1</value>
+                </Selection>
+                <Action>
+                    <value>UpdateTextField</value>
+                </Action>
+                <Input>
+                    <value>1</value>
+                </Input>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>givenDenom1</value>
+                </Selection>
+                <Action>
+                    <value>UpdateTextField</value>
+                </Action>
+                <Input>
+                    <value>4</value>
+                </Input>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>givenNum2</value>
+                </Selection>
+                <Action>
+                    <value>UpdateTextField</value>
+                </Action>
+                <Input>
+                    <value>1</value>
+                </Input>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>givenDenom2</value>
+                </Selection>
+                <Action>
+                    <value>UpdateTextField</value>
+                </Action>
+                <Input>
+                    <value>6</value>
+                </Input>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
                 <MessageType>StartStateEnd</MessageType>
             </properties>
         </message>
@@ -383,8 +511,6 @@
         <dimension>
             <x>235</x>
             <y>10</y>
-            <width>78</width>
-            <height>27</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -393,8 +519,6 @@
         <dimension>
             <x>99</x>
             <y>198</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -403,8 +527,6 @@
         <dimension>
             <x>99</x>
             <y>308</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -413,8 +535,6 @@
         <dimension>
             <x>99</x>
             <y>418</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -423,8 +543,6 @@
         <dimension>
             <x>99</x>
             <y>528</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -433,8 +551,6 @@
         <dimension>
             <x>99</x>
             <y>638</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -443,8 +559,6 @@
         <dimension>
             <x>100</x>
             <y>748</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -453,8 +567,6 @@
         <dimension>
             <x>412</x>
             <y>200</y>
-            <width>40</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -463,8 +575,6 @@
         <dimension>
             <x>407</x>
             <y>310</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -473,8 +583,6 @@
         <dimension>
             <x>406</x>
             <y>420</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -483,8 +591,6 @@
         <dimension>
             <x>406</x>
             <y>530</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -493,8 +599,6 @@
         <dimension>
             <x>406</x>
             <y>640</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -503,8 +607,6 @@
         <dimension>
             <x>406</x>
             <y>750</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -513,8 +615,6 @@
         <dimension>
             <x>406</x>
             <y>860</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="false">
@@ -523,8 +623,6 @@
         <dimension>
             <x>406</x>
             <y>970</y>
-            <width>47</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="true">
@@ -533,8 +631,6 @@
         <dimension>
             <x>416</x>
             <y>1080</y>
-            <width>36</width>
-            <height>22</height>
         </dimension>
     </node>
     <node locked="false" doneState="true">
@@ -543,12 +639,10 @@
         <dimension>
             <x>102</x>
             <y>849</y>
-            <width>50</width>
-            <height>22</height>
         </dimension>
     </node>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -573,37 +667,26 @@
             <hintMessage>What is the least common multiple of 4 and 6?</hintMessage>
             <hintMessage>What is the smallest number that both 4 and 6 go into?</hintMessage>
             <hintMessage>Please enter '12', the least common denominator, in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>12</matcherParameter>
-                <matcherParameter>convertDenom1</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertDenom1</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">12</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>133</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>determine-lcd fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>136</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <rule>
             <text>convert-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>166</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>1</sourceID>
         <destID>2</destID>
@@ -611,7 +694,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -636,29 +719,22 @@
             <hintMessage>What is the least common multiple of 4 and 6?</hintMessage>
             <hintMessage>What is the smallest number that both 4 and 6 go into?</hintMessage>
             <hintMessage>Please enter '12', the least common denominator, in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>12</matcherParameter>
-                <matcherParameter>convertDenom2</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertDenom2</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">12</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>133</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>convert-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>166</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>2</sourceID>
         <destID>3</destID>
@@ -666,7 +742,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -691,29 +767,22 @@
             <hintMessage>What is the least common multiple of 4 and 6? In this case, the least common denominator is 12.</hintMessage>
             <hintMessage>4 goes into 12 a factor of 3 times; so multiply the numerator (1) by this factor (3) to get the converted numerator.</hintMessage>
             <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>3</matcherParameter>
-                <matcherParameter>convertNum1</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertNum1</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">3</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>118</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
-        <preCheckedStatus>No-Applicable</preCheckedStatus>
+        <preCheckedStatus>SUCCESS</preCheckedStatus>
         <rule>
             <text>convert-numerator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>157</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>3</sourceID>
         <destID>4</destID>
@@ -721,7 +790,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -746,29 +815,22 @@
             <hintMessage>What is the least common multiple of 4 and 6? In this case, the least common denominator is 12.</hintMessage>
             <hintMessage>6 goes into 12 a factor of 2 times; so multiply the numerator (1) by this factor (2) to get the converted numerator.</hintMessage>
             <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>2</matcherParameter>
-                <matcherParameter>convertNum2</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertNum2</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">2</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>118</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>convert-numerator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>157</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>4</sourceID>
         <destID>5</destID>
@@ -776,7 +838,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -801,29 +863,22 @@
             <hintMessage>Remember that when adding fractions with the same denominator, we keep that denominator the same.</hintMessage>
             <hintMessage>Copy the least common demoninator to the highlighted field.</hintMessage>
             <hintMessage>Please enter '12' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>12</matcherParameter>
-                <matcherParameter>unreducedDenom</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">unreducedDenom</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">12</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>139</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>copy-answer-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>187</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>5</sourceID>
         <destID>6</destID>
@@ -831,7 +886,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -856,29 +911,22 @@
             <hintMessage>If you've converted your fractions successfully, you can add them.</hintMessage>
             <hintMessage>Add the numerators '3' and '2'.</hintMessage>
             <hintMessage>Please enter '5', the sume of '3' and '2', in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>5</matcherParameter>
-                <matcherParameter>unreducedNum</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">unreducedNum</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">5</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>124</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>add-numerators fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>145</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>6</sourceID>
         <destID>7</destID>
@@ -886,7 +934,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="false" optional="false">
+        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -911,37 +959,26 @@
             <hintMessage>What is a common multiple of 4 and 6?</hintMessage>
             <hintMessage>A common multiple of 4 and 6 can be found by multiplying them together.</hintMessage>
             <hintMessage>Please enter '24', the product of 4 and 6, in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>24</matcherParameter>
-                <matcherParameter>convertDenom1</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertDenom1</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">24</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>133</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>determine-product fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>155</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <rule>
             <text>convert-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>166</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>1</sourceID>
         <destID>10</destID>
@@ -949,7 +986,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -974,29 +1011,22 @@
             <hintMessage>What is a common multiple of 4 and 6?</hintMessage>
             <hintMessage>A common multiple of 4 and 6 can be found by multiplying them together.</hintMessage>
             <hintMessage>Please enter '24', the product of 4 and 6, in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>24</matcherParameter>
-                <matcherParameter>convertDenom2</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertDenom2</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">24</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>133</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>convert-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>166</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>10</sourceID>
         <destID>11</destID>
@@ -1004,7 +1034,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1029,29 +1059,22 @@
             <hintMessage>What is the a common multiple of 4 and 6? Multiplying 4 and 6 gives you 24, a common multiple.</hintMessage>
             <hintMessage>6 goes into 24 a factor of 4 times; so multiply the numerator (1) by this factor (4) to get the converted numerator.</hintMessage>
             <hintMessage>Please enter '4' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>4</matcherParameter>
-                <matcherParameter>convertNum2</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertNum2</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">4</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>118</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>convert-numerator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>157</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>11</sourceID>
         <destID>12</destID>
@@ -1059,7 +1082,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1084,29 +1107,22 @@
             <hintMessage>What is the a common multiple of 4 and 6? Multiplying 4 and 6 gives you 24, a common multiple.</hintMessage>
             <hintMessage>4 goes into 24 a factor of 6 times; so multiply the numerator (1) by this factor (6) to get the converted numerator.</hintMessage>
             <hintMessage>Please enter '6' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>6</matcherParameter>
-                <matcherParameter>convertNum1</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">convertNum1</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">6</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>118</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>convert-numerator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>157</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>12</sourceID>
         <destID>13</destID>
@@ -1114,7 +1130,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1139,29 +1155,22 @@
             <hintMessage>If you've converted your fractions successfully, you can add them.</hintMessage>
             <hintMessage>Add the numerators '6' and '4'.</hintMessage>
             <hintMessage>Please enter '10', the sume of '6' and '4', in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>10</matcherParameter>
-                <matcherParameter>unreducedNum</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">unreducedNum</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">10</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>129</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>add-numerators fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>145</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>13</sourceID>
         <destID>14</destID>
@@ -1169,7 +1178,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1194,29 +1203,22 @@
             <hintMessage>Remember that when adding fractions with the same denominator, we keep that denominator the same.</hintMessage>
             <hintMessage>Copy the common demoninator to the highlighted field.</hintMessage>
             <hintMessage>Please enter '24' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>24</matcherParameter>
-                <matcherParameter>unreducedDenom</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">unreducedDenom</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">24</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>139</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>copy-answer-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>187</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>14</sourceID>
         <destID>15</destID>
@@ -1224,7 +1226,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1249,29 +1251,22 @@
             <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
             <hintMessage>You can divide both '10' and '24' by '2'. Divide '10' by '2'.</hintMessage>
             <hintMessage>Please enter '5', the quotient found by dividing '10' by '2', in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>5</matcherParameter>
-                <matcherParameter>finalNum</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">finalNum</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">5</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>99</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>reduce-numerator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>153</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>15</sourceID>
         <destID>16</destID>
@@ -1279,7 +1274,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1304,29 +1299,22 @@
             <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
             <hintMessage>You can divide both '10' and '24' by '2'. Divide '24' by '2'.</hintMessage>
             <hintMessage>Please enter '12', the quotient found by dividing '24' by '2', in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>UpdateTextField</matcherParameter>
-                <matcherParameter>12</matcherParameter>
-                <matcherParameter>finalDenom</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">finalDenom</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">12</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>114</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>reduce-denominator fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>162</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>16</sourceID>
         <destID>17</destID>
@@ -1334,7 +1322,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1358,29 +1346,22 @@
             <successMessage></successMessage>
             <hintMessage>You're all done. Go ahead and press the 'Done' button.</hintMessage>
             <hintMessage>You have answered all the questions. Please click on the Done button.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>ButtonPressed</matcherParameter>
-                <matcherParameter>-1</matcherParameter>
-                <matcherParameter>done</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">done</matcherParameter>
+                <matcherParameter name="action">ButtonPressed</matcherParameter>
+                <matcherParameter name="input">-1</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>84</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>done fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>100</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>17</sourceID>
         <destID>18</destID>
@@ -1388,7 +1369,7 @@
         <SimSt></SimSt>
     </edge>
     <edge>
-        <actionLabel preferPathMark="true" optional="false">
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
@@ -1413,29 +1394,22 @@
             <hintMessage>Can you further simplify this fraction?</hintMessage>
             <hintMessage>The fraction 5/12 is simplified.</hintMessage>
             <hintMessage>You are done with the problem. Please click on the 'Done' button.</hintMessage>
+            <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
             <checkedStatus>SUCCESS</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
-                <matcherParameter>ButtonPressed</matcherParameter>
-                <matcherParameter>-1</matcherParameter>
-                <matcherParameter>done</matcherParameter>
-                <matcherParameter>Student</matcherParameter>
+                <matcherParameter name="selection">done</matcherParameter>
+                <matcherParameter name="action">ButtonPressed</matcherParameter>
+                <matcherParameter name="input">-1</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
-            <dimension>
-                <width>84</width>
-                <height>16</height>
-            </dimension>
         </actionLabel>
         <preCheckedStatus>No-Applicable</preCheckedStatus>
         <rule>
             <text>done fraction-addition</text>
             <indicator>-1</indicator>
-            <dimension>
-                <width>100</width>
-                <height>16</height>
-            </dimension>
         </rule>
         <sourceID>7</sourceID>
         <destID>20</destID>
@@ -1450,20 +1424,6 @@
         <hintMessage>You have answered all the questions. Please click on the Done button.</hintMessage>
     </productionRule>
     <productionRule>
-        <ruleName>reduce-denominator</ruleName>
-        <productionSet>fraction-addition</productionSet>
-        <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
-        <hintMessage>You can divide both '10' and '24' by '2'. Divide '24' by '2'.</hintMessage>
-        <hintMessage>Please enter '12', the quotient found by dividing '24' by '2', in the highlighted field.</hintMessage>
-    </productionRule>
-    <productionRule>
-        <ruleName>reduce-numerator</ruleName>
-        <productionSet>fraction-addition</productionSet>
-        <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
-        <hintMessage>You can divide both '10' and '24' by '2'. Divide '10' by '2'.</hintMessage>
-        <hintMessage>Please enter '5', the quotient found by dividing '10' by '2', in the highlighted field.</hintMessage>
-    </productionRule>
-    <productionRule>
         <ruleName>copy-answer-denominator</ruleName>
         <productionSet>fraction-addition</productionSet>
         <hintMessage>Remember that when adding fractions with the same denominator, we keep that denominator the same.</hintMessage>
@@ -1471,18 +1431,18 @@
         <hintMessage>Please enter '12' in the highlighted field.</hintMessage>
     </productionRule>
     <productionRule>
-        <ruleName>add-numerators</ruleName>
+        <ruleName>reduce-denominator</ruleName>
         <productionSet>fraction-addition</productionSet>
-        <hintMessage>If you've converted your fractions successfully, you can add them.</hintMessage>
-        <hintMessage>Add the numerators '3' and '2'.</hintMessage>
-        <hintMessage>Please enter '5', the sume of '3' and '2', in the highlighted field.</hintMessage>
+        <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
+        <hintMessage>You can divide both '10' and '24' by '2'. Divide '24' by '2'.</hintMessage>
+        <hintMessage>Please enter '12', the quotient found by dividing '24' by '2', in the highlighted field.</hintMessage>
     </productionRule>
     <productionRule>
-        <ruleName>convert-numerator</ruleName>
+        <ruleName>determine-lcd</ruleName>
         <productionSet>fraction-addition</productionSet>
-        <hintMessage>What is the least common multiple of 4 and 6? In this case, the least common denominator is 12.</hintMessage>
-        <hintMessage>4 goes into 12 a factor of 3 times; so multiply the numerator (1) by this factor (3) to get the converted numerator.</hintMessage>
-        <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
+        <hintMessage>What is the least common multiple of 4 and 6?</hintMessage>
+        <hintMessage>What is the smallest number that both 4 and 6 go into?</hintMessage>
+        <hintMessage>Please enter '12', the least common denominator, in the highlighted field.</hintMessage>
     </productionRule>
     <productionRule>
         <ruleName>convert-denominator</ruleName>
@@ -1499,11 +1459,26 @@
         <hintMessage>Please enter '24', the product of 4 and 6, in the highlighted field.</hintMessage>
     </productionRule>
     <productionRule>
-        <ruleName>determine-lcd</ruleName>
+        <ruleName>convert-numerator</ruleName>
         <productionSet>fraction-addition</productionSet>
-        <hintMessage>What is the least common multiple of 4 and 6?</hintMessage>
-        <hintMessage>What is the smallest number that both 4 and 6 go into?</hintMessage>
-        <hintMessage>Please enter '12', the least common denominator, in the highlighted field.</hintMessage>
+        <hintMessage>What is the least common multiple of 4 and 6? In this case, the least common denominator is 12.</hintMessage>
+        <hintMessage>4 goes into 12 a factor of 3 times; so multiply the numerator (1) by this factor (3) to get the converted numerator.</hintMessage>
+        <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
     </productionRule>
+    <productionRule>
+        <ruleName>reduce-numerator</ruleName>
+        <productionSet>fraction-addition</productionSet>
+        <hintMessage>You need to simplify the fraction. Find a number that divides evenly into both '10' and '24'.</hintMessage>
+        <hintMessage>You can divide both '10' and '24' by '2'. Divide '10' by '2'.</hintMessage>
+        <hintMessage>Please enter '5', the quotient found by dividing '10' by '2', in the highlighted field.</hintMessage>
+    </productionRule>
+    <productionRule>
+        <ruleName>add-numerators</ruleName>
+        <productionSet>fraction-addition</productionSet>
+        <hintMessage>If you've converted your fractions successfully, you can add them.</hintMessage>
+        <hintMessage>Add the numerators '3' and '2'.</hintMessage>
+        <hintMessage>Please enter '5', the sume of '3' and '2', in the highlighted field.</hintMessage>
+    </productionRule>
+    <EdgesGroups ordered="false"></EdgesGroups>
 </stateGraph>
 
