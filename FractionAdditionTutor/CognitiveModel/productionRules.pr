@@ -406,7 +406,7 @@ else
 ;; THEN
 ;; Write N/F as the numerator of the reduced answer fraction
 ;;
-(defrule reduce-numerator
+·(defrule reduce-numerator
 	?problem <- (problem 
 					(answer-fractions $? ?final-answer)
 					(subgoals $? ?sub $?))
