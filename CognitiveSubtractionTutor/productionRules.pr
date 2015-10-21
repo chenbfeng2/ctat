@@ -3,35 +3,10 @@
 
 ;; NOTE: in the English versions of the production rules, CAPITALIZED words denote variables
 
-;;
-;;  Functions to determine the name and rank order of the column (used for hints)
-;;
-(deffunction column-name (?pos)
-  (bind ?rpos (- 7 ?pos))    ; hacky, because it assumes 6 columns
-  (if (= ?rpos 1) then "ones"
-  else (if (= ?rpos 2) then "tens"
-  else (if (= ?rpos 3) then "hundreds"
-  else (if (= ?rpos 4) then "thousands"
-  else (if (= ?rpos 5) then "ten-thousands"
-  else (if (= ?rpos 6) then "hundred-thousands"
-  else "unknown")))))))
 
-(deffunction rank-order (?pos)
-  (bind ?rpos (- 7 ?pos))     ; hacky, because it assumes 6 columns
-  (if (= ?rpos 1) then "first"
-  else (if (= ?rpos 2) then "second"
-  else (if (= ?rpos 3) then "third"
-  else (if (= ?rpos 4) then "fourth"
-  else (if (= ?rpos 5) then "fifth"
-  else (if (= ?rpos 6) then "sixth"
-  else "unknown")))))))
-
-;;(deffunction isGreaterThan(?num1, ?num2)
-;;    > 0 (?num1 - ?num2))
-
-;;(deffunction isSmallerThan(?num1, ?num2)
-;;    < 0 (?num1 - ?num2))
-
+(deffunction check-borrow(?one1 ?one2)
+   (>= ?one1 ?one2 )
+)
 ;; WHEN BORROW IS NOT NECESSARY
 ;; IF
 ;;    The goal is to do an subtraction problem
@@ -47,12 +22,16 @@
     ?problem <- (problem
         (subtractor $? ?originS1)
         (subtrend $? ?originS2)
-        (subgoals))
+        (subgoals)
+    (finalValues $? ?answer))
+    ?answer <- (finalValues (onesDigit ?answerOne) (tensDigit ?answerTen))
+    ?answerOne <- (textField (value ?one&:(eq ?one nil)))
+    ?answerTen <- (textField (value ?ten&:(eq ?ten nil)))
     ?originS1<-(subtractor(onesDigit $? ?ones1))
     ?originS2<-(subtrend(onesDigit $? ?ones2))
-    ?ones1<-(textField (value ?d&:(neq ?d nil)))
-    ?ones2<-(textField (value ?d))
-    (test(>=(?ones2 ?ones1)))  ;; Consider only ones stripe regarding borrowing
+    ?ones1<-(textField (value ?d1&:(neq ?d1 nil)))
+    ?ones2<-(textField (value ?d2))
+    (test(check-borrow ?d1 ?d2))
     =>
 	(bind ?sub (assert (finalSub (subtractor ?originS1) (subtrend ?originS2))))
 	(modify ?problem (subgoals ?sub))
@@ -75,18 +54,23 @@
     ?problem <- (problem
         (subtractor $? ?originS1)
         (subtrend $? ?originS2)
-        (subgoals))
+        (subgoals)
+    (finalValues $? ?answer))
+    ?answer <- (finalValues (onesDigit ?answerOne) (tensDigit ?answerTen))
+    ?answerOne <- (textField (value ?one&:(eq ?one nil)))
+    ?answerTen <- (textField (value ?ten&:(eq ?ten nil)))
     ?originS1<-(subtractor(tensDigit $? ?tens1))
-    ?originS2<-(subtrend(onesDigit $? ?tens2))
-    ?tens1<-(textField (value ?d&:(neq ?d nil)))
-    ?tens2<-(textField (value ?d))
-    (test(check-borrow(?tens1 ?tens2)))
+    ?originS2<-(subtrend(tensDigit $? ?tens2))
+    ?tens1<-(textField (value ?d1&:(neq ?d1 nil)))
+    ?tens2<-(textField (value ?d2))
+    (test(check-borrow ?d1 ?d2))
     =>
-	(bind ?sub (assert (borrow (borrowValue ?B) (tensAfterBorrow ?newTens) (onesAfterBorrow ?newOnes))))
+	(bind ?sub (assert (borrow (borrowValue ?B) (tensAfterBorrow ?newTens) (onesAfterBorrow ?newOnes) )))
 	(modify ?problem (subgoals ?sub))
 	(construct-message
         "[ No need to consider borrowing, directly substract them is fine ]"
    ))
+
 
 (defrule write-borrow
     (declare (salience 100))
@@ -115,21 +99,108 @@
 ;; THEN
 ;;    Set a subgoal to reverse subtractor and subtrend, then do the subtraction.
 
-(defrule negative
-    (declare (salience 100)) 
-    ?problem <- (problem
-        (subtractor $? ?originS1)
-        (subtrend $? ?originS2)
-        (subgoals))
-    ?originS1<-(subtractor(tensDigit $? ?tens1))
-    ?originS2<-(subtrend(onesDigit $? ?tens2))
-    ?tens1<-(textField (value ?d&:(neq ?d nil)))
-    ?tens2<-(textField (value ?d))
-    (test(check-borrow(?tens1 ?tens2)))
-    =>
-	(bind ?sub (assert (negative (subtractor ?originS1) (subtrend ?originS2))))
-	(modify ?problem (subgoals ?sub))
-	(construct-message
-        "[ No need to consider borrowing, directly substract them is fine ]"
-   ))
+;(defrule negative
+;    (declare (salience 50)) 
+;   ?problem <- (problem
+;       (subtractor $? ?originS1)
+;       (subtrend $? ?originS2)
+;       (subgoals))
+;   ?originS1<-(subtractor(tensDigit $? ?tens1))
+;   ?originS2<-(subtrend(onesDigit $? ?tens2))
+;   ?tens1<-(textField (value ?d1&:(neq ?d1 nil)))
+;   ?tens2<-(textField (value ?d2))
+;   (test(check-borrow(?d1 ?d2)))
+;   =>
+;	(bind ?sub (assert (negative (subtractor ?originS1) (subtrend ?originS2))))
+;	(modify ?problem (subgoals ?sub))
+;	(construct-message
+;       "[ The result is negative, try the approuch of solving negative result problems ]"
+;  ))
 
+;; DO SUBTRACTION ON ONES STRIPE
+;; IF
+;;    There is a subtraction subgoal.
+;; 	  and the ones stripe have not been subtracted yet
+;;    and ones1 and ones2 are the ones stripe of the two converted number
+;; THEN
+;;    write ones1 - ones2 as the ones stripe of the result number
+;;    (mark ones stripe part of the subgoal done?)
+;;
+(defrule add-ones-stripe
+	?problem <- (problem (subgoals $? ?sub $?))
+	?sub <- (finalSub (subtractor ?S1) (subtrend ?S2))
+	?S1 <- (subtractor (onesDigit ?ones1))
+	?ones11 <- (textField (value ?n1&:(neq ?n1 nil)))
+	?S2 <- (subtrend (onesDigit ?ones2))
+	?ones2 <- (textField (value ?n2&:(neq ?n2 nil)))
+	?answer <- (finalValues (onesDigit ?num-ans))
+	?num-ans <- (textField (name ?field-name)(value nil))
+    ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?n1 ?n2)))
+=>
+	(bind ?resultOne (- ?n1 ?n2))
+	(predict-observable-action ?field-name UpdateTextField ?resultOne)
+    	(modify ?num-ans (value ?resultOne))
+	(construct-message
+        "[You have two fractions with the same denominator. You can add the numerators to find the numerator of the sum fraction. ]" 
+        "[What is the sum of the numerators " ?n1 " and " ?n2 "?]"
+        "[The sum of the numerators is " ?resultOne ". Write " ?resultOne " as the numerator in the highlighted cell.]"    
+	))
+
+;; DO SUBTRACTION ON ONES STRIPE
+;; IF
+;;    There is a subtraction subgoal.
+;; 	  and the tens stripe have not been subtracted yet
+;;    and tens1 and tens2 are the tens stripe of the two converted number
+;; THEN
+;;    write tens1 - tens2 as the ones stripe of the result number
+;;    (mark ones stripe part of the subgoal done?)
+;;
+(defrule add-tens-stripe
+	?problem <- (problem (subgoals $? ?sub $?))
+	?sub <- (finalSub (subtractor ?S1) (subtrend ?S2))
+	?S1 <- (subtractor (tensDigit ?tens1))
+	?tens1 <- (textField (value ?n1&:(neq ?n1 nil)))
+	?S2 <- (subtrend (tensDigit ?tens2))
+	?tens2 <- (textField (value ?n2&:(neq ?n2 nil)))
+	?answer <- (finalValues (tensDigit ?num-ans))
+	?num-ans <- (textField (name ?field-name)(value nil))
+    ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?n1 ?n2)))
+=>
+	(bind ?resultTen (- ?n1 ?n2))
+	(predict-observable-action ?field-name UpdateTextField ?resultTen)
+    	(modify ?num-ans (value ?resultTen))
+	(construct-message
+        "[You have two fractions with the same denominator. You can add the numerators to find the numerator of the sum fraction. ]" 
+        "[What is the  result of " ?n1 " - " ?n2 "?]"
+        "[The sum of the numerators is " ?resultTen ". Write " ?resultTen " as the numerator in the highlighted cell.]"    
+	))
+
+
+;; DONE
+;; IF
+;;   The goal is to do an addition problem
+;;   And there are no subgoals
+;;   And the problem has not been marked as done
+;;   And T is one of the interface elements, a table
+;;   And C1 and C2 are two adjacent columns
+;;   And C2 has a value in its result cell
+;;   And C1 is completely empty
+;; THEN
+;;   Press the Done button
+;;   And mark the problem as done
+
+(defrule done 
+    ?problem <- (problem
+;(subgoals)
+        (finalValues $? ?answer))
+    ?answer <- (finalValues (onesDigit ?answerOne) (tensDigit ?answerTen))
+    ?answerOne <- (textField (value ?one&:(neq ?one nil)))
+    ?answerTen <- (textField (value ?ten&:(neq ?ten nil)))
+ =>
+   (predict-observable-action done ButtonPressed -1)
+	(construct-message 
+			"[ Have you finished adding the numbers? ]"
+			"[ You are done.  Press the done button. ]"
+	))
