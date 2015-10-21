@@ -1,0 +1,135 @@
+;; tell Eclipse, etc. to read the templates from the wmeTypes.clp file
+(require* wmeTypes "wmeTypes.clp")
+
+;; NOTE: in the English versions of the production rules, CAPITALIZED words denote variables
+
+;;
+;;  Functions to determine the name and rank order of the column (used for hints)
+;;
+(deffunction column-name (?pos)
+  (bind ?rpos (- 7 ?pos))    ; hacky, because it assumes 6 columns
+  (if (= ?rpos 1) then "ones"
+  else (if (= ?rpos 2) then "tens"
+  else (if (= ?rpos 3) then "hundreds"
+  else (if (= ?rpos 4) then "thousands"
+  else (if (= ?rpos 5) then "ten-thousands"
+  else (if (= ?rpos 6) then "hundred-thousands"
+  else "unknown")))))))
+
+(deffunction rank-order (?pos)
+  (bind ?rpos (- 7 ?pos))     ; hacky, because it assumes 6 columns
+  (if (= ?rpos 1) then "first"
+  else (if (= ?rpos 2) then "second"
+  else (if (= ?rpos 3) then "third"
+  else (if (= ?rpos 4) then "fourth"
+  else (if (= ?rpos 5) then "fifth"
+  else (if (= ?rpos 6) then "sixth"
+  else "unknown")))))))
+
+;;(deffunction isGreaterThan(?num1, ?num2)
+;;    > 0 (?num1 - ?num2))
+
+;;(deffunction isSmallerThan(?num1, ?num2)
+;;    < 0 (?num1 - ?num2))
+
+;; WHEN BORROW IS NOT NECESSARY
+;; IF
+;;    The goal is to do an subtraction problem
+;;    And there is no pending subgoal (i.e., we've just started the problem)
+;;    And NUM1 and NUM2 are the numbers in the ones stripe to be substrated
+;;    And the ones stripe of NUM1 is greater then NUM2
+;; THEN
+;;    Set a subgoal to none borrowing substraction, using substractor NUM1 and substrend NUM2
+;;
+
+(defrule non-borrowing
+    (declare (salience 300)) 
+    ?problem <- (problem
+        (subtractor $? ?originS1)
+        (subtrend $? ?originS2)
+        (subgoals))
+    ?originS1<-(subtractor(onesDigit $? ?ones1))
+    ?originS2<-(subtrend(onesDigit $? ?ones2))
+    ?ones1<-(textField (value ?d&:(neq ?d nil)))
+    ?ones2<-(textField (value ?d))
+    (test(>=(?ones2 ?ones1)))  ;; Consider only ones stripe regarding borrowing
+    =>
+	(bind ?sub (assert (finalSub (subtractor ?originS1) (subtrend ?originS2))))
+	(modify ?problem (subgoals ?sub))
+	(construct-message
+        "[ No need to consider borrowing, directly substract them is fine ]"
+   ))
+
+
+;; WHEN BORROW IS NECESSARY
+;; IF
+;;    The goal is to do an subtraction problem
+;;    And there is no pending subgoal (i.e., we've just started the problem)
+;;    And NUM1 and NUM2 are the numbers in the ones stripe to be substrated
+;;    And the ones stripe of NUM1 is smaller then NUM2
+;; THEN
+;;    Set a subgoal to process borrow B, using the tens stripe of substractor S1.
+
+(defrule borrowing
+    (declare (salience 100)) 
+    ?problem <- (problem
+        (subtractor $? ?originS1)
+        (subtrend $? ?originS2)
+        (subgoals))
+    ?originS1<-(subtractor(tensDigit $? ?tens1))
+    ?originS2<-(subtrend(onesDigit $? ?tens2))
+    ?tens1<-(textField (value ?d&:(neq ?d nil)))
+    ?tens2<-(textField (value ?d))
+    (test(check-borrow(?tens1 ?tens2)))
+    =>
+	(bind ?sub (assert (borrow (borrowValue ?B) (tensAfterBorrow ?newTens) (onesAfterBorrow ?newOnes))))
+	(modify ?problem (subgoals ?sub))
+	(construct-message
+        "[ No need to consider borrowing, directly substract them is fine ]"
+   ))
+
+(defrule write-borrow
+    (declare (salience 100))
+    ?problem <- (problem 
+        (subtractor $? ?originS1)
+        (subtrend $? ?originS2)
+        (subgoals))
+    ?originS1<-(subtractor(tensDigit $? ?tens1))
+    ?originS2<-(subtrend(onesDigit $? ?tens2))
+    ?tens1<-(textField (value ?d&:(neq ?d nil)))
+    ?tens2<-(textField (value ?d))
+    (test( (== ?tens1 (+ ?tens2 10)) and ( == ?tens1 (- ?tens2 1)) ))
+    =>
+    (bind ?sub (assert(finalSub (subtractor ?s1) (subtrend ?s2) )))
+    (modify ?problem(subgoals ?sub))
+    (construct-message
+        "[]"
+    ))
+
+;; WHEN RESULT IS NEGATIVE
+;; IF
+;;    The goal is to do an subtraction problem
+;;    And there is no pending subgoal (i.e., we've just started the problem)
+;;    And NUM1 and NUM2 are the numbers in the ones stripe to be substrated
+;;    And NUM1 is smaller then NUM2
+;; THEN
+;;    Set a subgoal to reverse subtractor and subtrend, then do the subtraction.
+
+(defrule negative
+    (declare (salience 100)) 
+    ?problem <- (problem
+        (subtractor $? ?originS1)
+        (subtrend $? ?originS2)
+        (subgoals))
+    ?originS1<-(subtractor(tensDigit $? ?tens1))
+    ?originS2<-(subtrend(onesDigit $? ?tens2))
+    ?tens1<-(textField (value ?d&:(neq ?d nil)))
+    ?tens2<-(textField (value ?d))
+    (test(check-borrow(?tens1 ?tens2)))
+    =>
+	(bind ?sub (assert (negative (subtractor ?originS1) (subtrend ?originS2))))
+	(modify ?problem (subgoals ?sub))
+	(construct-message
+        "[ No need to consider borrowing, directly substract them is fine ]"
+   ))
+
