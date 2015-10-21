@@ -299,7 +299,7 @@ else
 	?conv-f <- (fraction (numerator ?conv-num))
 	?conv-num <- (textField (name ?field-name)(value nil))  ; redundant but won't hurt    
 =>
-    	(bind ?conv-factor (div ?new-denom-val ?denom-val))    ; perhaps somewhat implausible, cognitively speaking
+    (bind ?conv-factor (div ?new-denom-val ?denom-val))    ; perhaps somewhat implausible, cognitively speaking
 	(bind ?new-num-val (* ?num-val ?conv-factor))
 	(predict-observable-action ?field-name UpdateTextField ?new-num-val)
     	(modify ?conv-num (value ?new-num-val))

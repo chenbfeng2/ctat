@@ -7,31 +7,38 @@
    (slot value))
 (deftemplate MAIN::problem 
    (slot name)
-    (multislot subtractor)
-    (multislot subtrend)
+   (multislot subtractor)
+   (multislot subtrend)
+   (multislot finalValues)
    (multislot subgoals) 
    (slot done) 
-   (slot description))
+ ;  (slot description)
+   (multislot interface-elements)
+)
 (deftemplate MAIN::textField 
    (slot name) 
    (slot value))
 (deftemplate MAIN::negative
     (multislot subtractor)
     (multislot subtrend))
-(deftemplate MAIN::borrow
-    (slot borrowValue)
-    (slot tensAfterBorrow))
+(deftemplate MAIN::
+	(slot name)
+    (multislot borrowValue))
 (deftemplate MAIN::finalSub
     (multislot subtractor)
     (multislot subtrend))
-(deftemplate subtractor
+(deftemplate MAIN::subtractor
     (slot name) 
     (multislot tensDigit)
     (multislot onesDigit))
-(deftemplate subtrend
+(deftemplate MAIN::subtrend
     (slot name) 
     (multislot tensDigit)
     (multislot onesDigit))
+(deftemplate MAIN::finalValues
+    (slot name)
+    (slot tensDigit)
+    (slot onesDigit))
 (deftemplate onesSub
     (multislot onesDigits))
 (deftemplate tensSub

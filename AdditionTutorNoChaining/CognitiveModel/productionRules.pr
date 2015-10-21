@@ -355,7 +355,7 @@
 (defrule done
 	?problem <- (problem 
 		(interface-elements $? ?table $?)
-		(subgoals )
+		(subgoals)
 	)
 	?table <- (table (columns $? ?left-column ?right-column $?))
 	;all the cells in the left column should be empty
