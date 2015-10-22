@@ -3,9 +3,6 @@
 
 ;; NOTE: in the English versions of the production rules, CAPITALIZED words denote variables
 
-;;
-;;  Functions to determine the name and rank order of the column (used for hints)
-;;
 
 (deffunction check-borrow(?one1 ?one2)
    (>= ?one1 ?one2 )
@@ -26,21 +23,36 @@
         (subtractor $? ?originS1)
         (subtrend $? ?originS2)
         (subgoals)
+        (Borrow ?borrowPos)
+        (convertedSubtractor ?SubtractorPos)
     (finalValues $? ?answer))
     ?answer <- (finalValues (onesDigit ?answerOne) (tensDigit ?answerTen))
     ?answerOne <- (textField (value ?one&:(eq ?one nil)))
     ?answerTen <- (textField (value ?ten&:(eq ?ten nil)))
-    ?originS1<-(subtractor(onesDigit $? ?ones1))
-    ?originS2<-(subtrend(onesDigit $? ?ones2))
-    ?ones1<-(textField (value ?d1&:(neq ?d1 nil)))
-    ?ones2<-(textField (value ?d2))
-    (test(check-borrow ?d1 ?d2))
+    ?originS1<-(subtractor(tensDigit $? ?tens1)(onesDigit $? ?ones1))
+    ?originS2<-(subtrend(tensDigit $? ?tens2) (onesDigit $? ?ones2))
+    ?tens1<-(textField (value ?d1&:(neq ?d1 nil)))
+    ?tens2<-(textField (value ?d2))
+    ?ones1<-(textField (value ?d3))
+    ?ones2<-(textField (value ?d4))
+    ?SubtractorPos <-(subtractor (onesDigit ?onesPos) (tensDigit ?tensPos))
+    (test(check-borrow ?d3 ?d4))
     =>
-	(bind ?sub (assert (finalSub (subtractor ?originS1) (subtrend ?originS2))))
-	(modify ?problem (subgoals ?sub))
+    (bind ?finalSubtractor (assert (subtractor(onesDigit  ?d3)(tensDigit ?d1))))
+    (bind ?finalSubtrend (assert (subtrend(tensDigit  ?d2)(onesDigit ?d4))))
+   	(bind ?sub1 (assert (finalSub (subtractor ?finalSubtractor) (subtrend ?finalSubtrend))))
+    (bind ?sub2 (assert (MotifyBorrows (borrowValue 0) (borrowtarget ?borrowPos))))
+    (bind ?sub3 (assert (convertTens (tensAfterBorrow ?d1) (targetTens ?tensPos))))
+    (bind ?sub4 (assert (convertOnes (onesAfterBorrow ?d3) (targetOnes ?onesPos))))
+	(modify ?problem (subgoals ?sub1 ?sub2 ?sub3 ?sub4))
 	(construct-message
-        "[ No need to consider borrowing, directly substract them is fine ]"
-   ))
+       "[ No need to consider borrowing, directly substract them is fine ]"
+  ))
+;	(bind ?new-sub (assert (borrow (borrowValue ?d1) (tensAfterBorrow ?d1) (onesAfterBorrow ?d3) )))
+;	(modify ?problem (subgoals ?new-sub))
+;	(construct-message
+;       "[ No need to consider borrowing, directly substract them is fine ]"
+;    ))
 
 
 ;; WHEN BORROW IS NECESSARY
@@ -57,24 +69,72 @@
     ?problem <- (problem
         (subtractor $? ?originS1)
         (subtrend $? ?originS2)
+        (Borrow ?borrowPos)
         (subgoals)
     (finalValues $? ?answer))
     ?answer <- (finalValues (onesDigit ?answerOne) (tensDigit ?answerTen))
     ?answerOne <- (textField (value ?one&:(eq ?one nil)))
     ?answerTen <- (textField (value ?ten&:(eq ?ten nil)))
-    ?originS1<-(subtractor(tensDigit $? ?tens1))
-    ?originS2<-(subtrend(tensDigit $? ?tens2))
+    ?originS1<-(subtractor(tensDigit $? ?tens1)(onesDigit $? ?ones1))
+    ?originS2<-(subtrend(tensDigit $? ?tens2) (onesDigit $? ?ones2))
     ?tens1<-(textField (value ?d1&:(neq ?d1 nil)))
     ?tens2<-(textField (value ?d2))
-    (test(check-borrow ?d1 ?d2))
+    ?ones1<-(textField (value ?d3))
+    ?ones2<-(textField (value ?d4))
+    (test(> ?d1 ?d2))
+   	(test(< ?d3 ?d4))
+    ?SubtractorPos <-(subtractor (onesDigit ?onesPos) (tensDigit ?tensPos))
     =>
-	(bind ?sub (assert (borrow (borrowValue ?B) (tensAfterBorrow ?newTens))))
-	(modify ?problem (subgoals ?sub))
+    (bind ?finalSubtractor (assert (subtractor(onesDigit  (+ ?d3 10))(tensDigit (- ?d1 1)))))
+    (bind ?finalSubtrend (assert (subtrend(tensDigit  ?d2)(onesDigit ?d4))))
+   	(bind ?sub1 (assert (finalSub (subtractor ?finalSubtractor) (subtrend ?finalSubtrend))))
+    (bind ?sub2 (assert (MotifyBorrows (borrowValue 1) (borrowtarget ?borrowPos))))
+    (bind ?sub3 (assert (convertTens (tensAfterBorrow (- ?d1 1))(targetTens ?tensPos))))
+    (bind ?sub4 (assert (convertOnes (onesAfterBorrow (+ ?d3 10)) (targetOnes ?onesPos))))
+	(modify ?problem (subgoals ?sub1 ?sub2 ?sub3 ?sub4))
 	(construct-message
-        "[ No need to consider borrowing, directly substract them is fine ]"
-   ))
+       "[ No need to consider borrowing, directly substract them is fine ]"
+  ))
 
 
+(defrule write-borrow
+    ?problem <- (problem (subgoals $? ?sub $? )	)
+	?sub <- (MotifyBorrows (borrowValue ?B)(borrowtarget ?resultB))
+	?resultB <-(textField (name ?field-name)(value nil))
+    ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField ?B))
+=>
+	(predict-observable-action ?field-name UpdateTextField ?B)
+    	(modify ?num-ans (value ?ten))
+    (construct-message
+        "[]"
+    ))
+
+(defrule write-NewTen
+    ?problem <- (problem (subgoals $? ?sub $?))
+	?sub <- (convertTens (tensAfterBorrow ?ten) (targetTens ?resultTen))
+	?resultTen <- (textField (name ?field-name)(value nil))
+    ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField ?ten))
+=>
+	(predict-observable-action ?field-name UpdateTextField ?ten)
+    	(modify ?resultTen (value ?ten))
+    (construct-message
+        "[]"
+    ))
+
+(defrule write-NewOne
+    ?problem <- (problem (subgoals $? ?sub $?))
+	?sub <- (convertOnes (onesAfterBorrow ?one)(targetOnes ?resultOne))
+	?resultOne <- (textField(name ?field-name)(value nil))
+    ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField ?one))
+=>
+	(predict-observable-action ?field-name UpdateTextField ?one)
+    	(modify ?resultOne (value ?one))
+    (construct-message
+        "[]"
+    ))
 ;; WHEN RESULT IS NEGATIVE
 ;; IF
 ;;    The goal is to do an subtraction problem
@@ -115,15 +175,13 @@
 	?problem <- (problem (subgoals $? ?sub $?))
 	?sub <- (finalSub (subtractor ?S1) (subtrend ?S2))
 	?S1 <- (subtractor (onesDigit ?ones1))
-	?ones11 <- (textField (value ?n1&:(neq ?n1 nil)))
 	?S2 <- (subtrend (onesDigit ?ones2))
-	?ones2 <- (textField (value ?n2&:(neq ?n2 nil)))
 	?answer <- (finalValues (onesDigit ?num-ans))
 	?num-ans <- (textField (name ?field-name)(value nil))
     ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
-    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?n1 ?n2)))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?ones1 ?ones2)))
 =>
-	(bind ?resultOne (- ?n1 ?n2))
+	(bind ?resultOne (- ?ones1 ?ones2))
 	(predict-observable-action ?field-name UpdateTextField ?resultOne)
     	(modify ?num-ans (value ?resultOne))
 	(construct-message
@@ -145,15 +203,13 @@
 	?problem <- (problem (subgoals $? ?sub $?))
 	?sub <- (finalSub (subtractor ?S1) (subtrend ?S2))
 	?S1 <- (subtractor (tensDigit ?tens1))
-	?tens1 <- (textField (value ?n1&:(neq ?n1 nil)))
 	?S2 <- (subtrend (tensDigit ?tens2))
-	?tens2 <- (textField (value ?n2&:(neq ?n2 nil)))
 	?answer <- (finalValues (tensDigit ?num-ans))
 	?num-ans <- (textField (name ?field-name)(value nil))
     ?sv <- (studentValues (selection ?sSelection) (action ?sAction) (input ?sInput))
-    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?n1 ?n2)))
+    (test (lhs-predict-oa ?sSelection ?sAction ?sInput ?field-name UpdateTextField (- ?tens1 ?tens2)))
 =>
-	(bind ?resultTen (- ?n1 ?n2))
+	(bind ?resultTen (- ?tens1 ?tens2))
 	(predict-observable-action ?field-name UpdateTextField ?resultTen)
     	(modify ?num-ans (value ?resultTen))
 	(construct-message

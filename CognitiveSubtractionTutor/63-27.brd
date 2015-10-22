@@ -6,7 +6,7 @@
             <verb>SendNoteProperty</verb>
             <properties>
                 <MessageType>StartProblem</MessageType>
-                <ProblemName>37-15</ProblemName>
+                <ProblemName>63-27</ProblemName>
             </properties>
         </message>
         <message>
@@ -46,22 +46,6 @@
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
                 <WidgetType>JCommTextField</WidgetType>
-                <CommName>FirstDigitUpper</CommName>
-                <UpdateEachCycle>false</UpdateEachCycle>
-                <jessDeftemplates>
-                    <value>(deftemplate textField (slot name) (slot value))</value>
-                </jessDeftemplates>
-                <jessInstances>
-                    <value>(assert (textField (name FirstDigitUpper)))</value>
-                </jessInstances>
-                <ComponentDescription>v=true,x=220,y=114</ComponentDescription>
-            </properties>
-        </message>
-        <message>
-            <verb>SendNoteProperty</verb>
-            <properties>
-                <MessageType>InterfaceDescription</MessageType>
-                <WidgetType>JCommTextField</WidgetType>
                 <CommName>Borrow</CommName>
                 <UpdateEachCycle>false</UpdateEachCycle>
                 <jessDeftemplates>
@@ -71,6 +55,22 @@
                     <value>(assert (textField (name Borrow)))</value>
                 </jessInstances>
                 <ComponentDescription>v=true,x=187,y=44</ComponentDescription>
+            </properties>
+        </message>
+        <message>
+            <verb>SendNoteProperty</verb>
+            <properties>
+                <MessageType>InterfaceDescription</MessageType>
+                <WidgetType>JCommTextField</WidgetType>
+                <CommName>FirstDigitUpper</CommName>
+                <UpdateEachCycle>false</UpdateEachCycle>
+                <jessDeftemplates>
+                    <value>(deftemplate textField (slot name) (slot value))</value>
+                </jessDeftemplates>
+                <jessInstances>
+                    <value>(assert (textField (name FirstDigitUpper)))</value>
+                </jessInstances>
+                <ComponentDescription>v=true,x=220,y=114</ComponentDescription>
             </properties>
         </message>
         <message>
@@ -225,22 +225,6 @@
             <verb>SendNoteProperty</verb>
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
-                <WidgetType>JCommLabel</WidgetType>
-                <CommName>JCommLabel4</CommName>
-                <UpdateEachCycle>false</UpdateEachCycle>
-                <jessDeftemplates>
-                    <value>(deftemplate label (slot name) (slot value))</value>
-                </jessDeftemplates>
-                <jessInstances>
-                    <value>(assert (label (name JCommLabel4)))</value>
-                </jessInstances>
-                <ComponentDescription>v=true,x=41,y=83</ComponentDescription>
-            </properties>
-        </message>
-        <message>
-            <verb>SendNoteProperty</verb>
-            <properties>
-                <MessageType>InterfaceDescription</MessageType>
                 <WidgetType>JCommTextField</WidgetType>
                 <CommName>NumberAfterBorrow</CommName>
                 <UpdateEachCycle>false</UpdateEachCycle>
@@ -258,15 +242,15 @@
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
                 <WidgetType>JCommLabel</WidgetType>
-                <CommName>JCommLabel3</CommName>
+                <CommName>JCommLabel4</CommName>
                 <UpdateEachCycle>false</UpdateEachCycle>
                 <jessDeftemplates>
                     <value>(deftemplate label (slot name) (slot value))</value>
                 </jessDeftemplates>
                 <jessInstances>
-                    <value>(assert (label (name JCommLabel3)))</value>
+                    <value>(assert (label (name JCommLabel4)))</value>
                 </jessInstances>
-                <ComponentDescription>v=true,x=139,y=170</ComponentDescription>
+                <ComponentDescription>v=true,x=41,y=83</ComponentDescription>
             </properties>
         </message>
         <message>
@@ -290,15 +274,15 @@
             <properties>
                 <MessageType>InterfaceDescription</MessageType>
                 <WidgetType>JCommLabel</WidgetType>
-                <CommName>JCommLabel2</CommName>
+                <CommName>JCommLabel3</CommName>
                 <UpdateEachCycle>false</UpdateEachCycle>
                 <jessDeftemplates>
                     <value>(deftemplate label (slot name) (slot value))</value>
                 </jessDeftemplates>
                 <jessInstances>
-                    <value>(assert (label (name JCommLabel2)))</value>
+                    <value>(assert (label (name JCommLabel3)))</value>
                 </jessInstances>
-                <ComponentDescription>v=true,x=139,y=128</ComponentDescription>
+                <ComponentDescription>v=true,x=139,y=170</ComponentDescription>
             </properties>
         </message>
         <message>
@@ -315,6 +299,22 @@
                     <value>(assert (label (name JCommLabel)))</value>
                 </jessInstances>
                 <ComponentDescription>v=true,x=41,y=138</ComponentDescription>
+            </properties>
+        </message>
+        <message>
+            <verb>SendNoteProperty</verb>
+            <properties>
+                <MessageType>InterfaceDescription</MessageType>
+                <WidgetType>JCommLabel</WidgetType>
+                <CommName>JCommLabel2</CommName>
+                <UpdateEachCycle>false</UpdateEachCycle>
+                <jessDeftemplates>
+                    <value>(deftemplate label (slot name) (slot value))</value>
+                </jessDeftemplates>
+                <jessInstances>
+                    <value>(assert (label (name JCommLabel2)))</value>
+                </jessInstances>
+                <ComponentDescription>v=true,x=139,y=128</ComponentDescription>
             </properties>
         </message>
         <message>
@@ -346,7 +346,7 @@
                 <Input>
                     <value>Final Answer</value>
                 </Input>
-                <transaction_id>T8f78ce32-34f4-4a26-a0be-43fe15577d04</transaction_id>
+                <transaction_id>T7bcaa5b7-b6e3-46b9-8290-6400c065aee5</transaction_id>
             </properties>
         </message>
         <message>
@@ -362,7 +362,7 @@
                 <Input>
                     <value>Converted Numbers</value>
                 </Input>
-                <transaction_id>Tfedbd045-921d-4ee1-bed8-56bf8617fd5b</transaction_id>
+                <transaction_id>Tac2d6c17-46b3-4ff9-8c30-1c5f6f322fd9</transaction_id>
             </properties>
         </message>
         <message>
@@ -378,7 +378,7 @@
                 <Input>
                     <value>Borrows</value>
                 </Input>
-                <transaction_id>Tf429eed4-14c1-45a4-ba19-3346440be656</transaction_id>
+                <transaction_id>Tc9d4a229-f519-4165-b61c-6a35be149325</transaction_id>
             </properties>
         </message>
         <message>
@@ -394,7 +394,7 @@
                 <Input>
                     <value>Given Numbers</value>
                 </Input>
-                <transaction_id>T698c9af4-7459-45ca-a939-911e19535f0a</transaction_id>
+                <transaction_id>T02524a70-ee75-419b-8fe2-50fd31366664</transaction_id>
             </properties>
         </message>
         <message>
@@ -410,23 +410,7 @@
                 <Input>
                     <value>=</value>
                 </Input>
-                <transaction_id>T2c4023ba-215f-40dc-9c9d-e6c10f7ce54b</transaction_id>
-            </properties>
-        </message>
-        <message>
-            <verb>NotePropertySet</verb>
-            <properties>
-                <MessageType>InterfaceAction</MessageType>
-                <Selection>
-                    <value>JCommLabel2</value>
-                </Selection>
-                <Action>
-                    <value>UpdateText</value>
-                </Action>
-                <Input>
-                    <value>=</value>
-                </Input>
-                <transaction_id>T493b61e7-b998-4349-96e8-91d5937d4902</transaction_id>
+                <transaction_id>Tff35f3d0-91da-40ce-8ae8-498a55527630</transaction_id>
             </properties>
         </message>
         <message>
@@ -442,7 +426,23 @@
                 <Input>
                     <value>-</value>
                 </Input>
-                <transaction_id>T066ea0d4-b28c-4797-b56e-0e8265f85175</transaction_id>
+                <transaction_id>Tbb85d24a-08c7-470b-9361-af4fe9f67c7f</transaction_id>
+            </properties>
+        </message>
+        <message>
+            <verb>NotePropertySet</verb>
+            <properties>
+                <MessageType>InterfaceAction</MessageType>
+                <Selection>
+                    <value>JCommLabel2</value>
+                </Selection>
+                <Action>
+                    <value>UpdateText</value>
+                </Action>
+                <Input>
+                    <value>=</value>
+                </Input>
+                <transaction_id>Tf3a71542-dcaf-4bbc-a742-74010897bf4f</transaction_id>
             </properties>
         </message>
         <message>
@@ -456,9 +456,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>3</value>
+                    <value>6</value>
                 </Input>
-                <transaction_id>T3e17f870-9616-49f7-9cc5-a210d5871bb7</transaction_id>
+                <transaction_id>Tc8dd7f4f-480c-49b4-9dcf-6c6ee7a29a79</transaction_id>
             </properties>
         </message>
         <message>
@@ -472,9 +472,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>7</value>
+                    <value>3</value>
                 </Input>
-                <transaction_id>Ted7cf308-d33a-416d-9e98-3c291b237e0f</transaction_id>
+                <transaction_id>T0fbb8418-0a0f-4b56-b518-db49b4c815d7</transaction_id>
             </properties>
         </message>
         <message>
@@ -488,9 +488,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>1</value>
+                    <value>2</value>
                 </Input>
-                <transaction_id>T44195ca5-bfab-4792-a132-06cc6af7073c</transaction_id>
+                <transaction_id>Tcb10ad17-d4b4-4f05-bc84-4484d0d60770</transaction_id>
             </properties>
         </message>
         <message>
@@ -504,9 +504,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>5</value>
+                    <value>7</value>
                 </Input>
-                <transaction_id>T83d6cb16-bc0f-49d7-a5df-8cbbcef8436a</transaction_id>
+                <transaction_id>T95e4a333-dfb2-4e7b-8bd3-106b67b2acec</transaction_id>
             </properties>
         </message>
         <message>
@@ -520,9 +520,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>1</value>
+                    <value>2</value>
                 </Input>
-                <transaction_id>T03086b0c-ce2b-4118-b0ef-4a1926b23492</transaction_id>
+                <transaction_id>Tbddb0497-3559-40d5-b9c8-8aa41585fab6</transaction_id>
             </properties>
         </message>
         <message>
@@ -536,9 +536,9 @@
                     <value>UpdateTextField</value>
                 </Action>
                 <Input>
-                    <value>5</value>
+                    <value>7</value>
                 </Input>
-                <transaction_id>Ta35bbcff-3695-4a06-9698-0d07a2a4b6d3</transaction_id>
+                <transaction_id>T6cd9209d-092b-480f-a010-5f0b7a7bbef0</transaction_id>
             </properties>
         </message>
         <message>
@@ -549,7 +549,7 @@
         </message>
     </startNodeMessages>
     <node locked="false" doneState="false">
-        <text>37-15</text>
+        <text>63-27</text>
         <uniqueID>1</uniqueID>
         <dimension>
             <x>291</x>
@@ -557,51 +557,43 @@
         </dimension>
     </node>
     <node locked="false" doneState="false">
-        <text>state30</text>
-        <uniqueID>31</uniqueID>
+        <text>state1</text>
+        <uniqueID>2</uniqueID>
         <dimension>
-            <x>310</x>
-            <y>157</y>
+            <x>317</x>
+            <y>149</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
-        <text>state31</text>
-        <uniqueID>32</uniqueID>
+        <text>state2</text>
+        <uniqueID>3</uniqueID>
         <dimension>
-            <x>310</x>
-            <y>267</y>
+            <x>317</x>
+            <y>259</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
-        <text>state32</text>
-        <uniqueID>33</uniqueID>
+        <text>state3</text>
+        <uniqueID>4</uniqueID>
         <dimension>
-            <x>310</x>
-            <y>377</y>
+            <x>317</x>
+            <y>369</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
-        <text>state33</text>
-        <uniqueID>34</uniqueID>
+        <text>state4</text>
+        <uniqueID>5</uniqueID>
         <dimension>
-            <x>310</x>
-            <y>487</y>
+            <x>317</x>
+            <y>479</y>
         </dimension>
     </node>
     <node locked="false" doneState="false">
-        <text>state34</text>
-        <uniqueID>35</uniqueID>
+        <text>state5</text>
+        <uniqueID>6</uniqueID>
         <dimension>
-            <x>310</x>
-            <y>597</y>
-        </dimension>
-    </node>
-    <node locked="false" doneState="false">
-        <text>state35</text>
-        <uniqueID>36</uniqueID>
-        <dimension>
-            <x>234</x>
-            <y>482</y>
+            <x>317</x>
+            <y>589</y>
         </dimension>
     </node>
     <edge>
@@ -609,7 +601,7 @@
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
-            <uniqueID>59</uniqueID>
+            <uniqueID>1</uniqueID>
             <message>
                 <verb>NotePropertySet</verb>
                 <properties>
@@ -621,14 +613,14 @@
                         <value>UpdateTextField</value>
                     </Action>
                     <Input>
-                        <value>0</value>
+                        <value>1</value>
                     </Input>
-                    <transaction_id>T39eec81e-856c-4607-8dc4-782fb21a384b</transaction_id>
+                    <transaction_id>T6519a780-10e7-45df-849f-ca01f0a3375c</transaction_id>
                 </properties>
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
-            <hintMessage>Please enter '0' in the highlighted field.</hintMessage>
+            <hintMessage>Please enter '1' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
@@ -637,17 +629,17 @@
                 <matcherType>ExactMatcher</matcherType>
                 <matcherParameter name="selection">Borrow</matcherParameter>
                 <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">0</matcherParameter>
+                <matcherParameter name="input">1</matcherParameter>
                 <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
         </actionLabel>
-        <preCheckedStatus>SUCCESS</preCheckedStatus>
+        <preCheckedStatus>NO-MODEL</preCheckedStatus>
         <rule>
             <text>unnamed</text>
             <indicator>-1</indicator>
         </rule>
         <sourceID>1</sourceID>
-        <destID>31</destID>
+        <destID>2</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <edge>
@@ -655,7 +647,7 @@
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
-            <uniqueID>61</uniqueID>
+            <uniqueID>3</uniqueID>
             <message>
                 <verb>NotePropertySet</verb>
                 <properties>
@@ -667,14 +659,14 @@
                         <value>UpdateTextField</value>
                     </Action>
                     <Input>
-                        <value>3</value>
+                        <value>5</value>
                     </Input>
-                    <transaction_id>Tf6ce1d5a-e45d-4f6f-8e08-bb20006acaf6</transaction_id>
+                    <transaction_id>Tf73f25d3-1edb-4bcf-8c80-de62573f82e4</transaction_id>
                 </properties>
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
-            <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
+            <hintMessage>Please enter '5' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
@@ -683,17 +675,17 @@
                 <matcherType>ExactMatcher</matcherType>
                 <matcherParameter name="selection">NumberAfterBorrow</matcherParameter>
                 <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">3</matcherParameter>
+                <matcherParameter name="input">5</matcherParameter>
                 <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
         </actionLabel>
-        <preCheckedStatus>SUCCESS</preCheckedStatus>
+        <preCheckedStatus>Never Checked</preCheckedStatus>
         <rule>
             <text>unnamed</text>
             <indicator>-1</indicator>
         </rule>
-        <sourceID>31</sourceID>
-        <destID>32</destID>
+        <sourceID>2</sourceID>
+        <destID>3</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <edge>
@@ -701,7 +693,7 @@
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
-            <uniqueID>63</uniqueID>
+            <uniqueID>5</uniqueID>
             <message>
                 <verb>NotePropertySet</verb>
                 <properties>
@@ -713,14 +705,14 @@
                         <value>UpdateTextField</value>
                     </Action>
                     <Input>
-                        <value>7</value>
+                        <value>13</value>
                     </Input>
-                    <transaction_id>T563b15d4-50f2-4045-9f15-1803cf82ab03</transaction_id>
+                    <transaction_id>T615abce9-7e88-45a0-8c49-82cbb5e410be</transaction_id>
                 </properties>
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
-            <hintMessage>Please enter '7' in the highlighted field.</hintMessage>
+            <hintMessage>Please enter '13' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
@@ -729,17 +721,17 @@
                 <matcherType>ExactMatcher</matcherType>
                 <matcherParameter name="selection">FirstDigitUpper</matcherParameter>
                 <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">7</matcherParameter>
+                <matcherParameter name="input">13</matcherParameter>
                 <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
         </actionLabel>
-        <preCheckedStatus>SUCCESS</preCheckedStatus>
+        <preCheckedStatus>Never Checked</preCheckedStatus>
         <rule>
             <text>unnamed</text>
             <indicator>-1</indicator>
         </rule>
-        <sourceID>32</sourceID>
-        <destID>33</destID>
+        <sourceID>3</sourceID>
+        <destID>4</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <edge>
@@ -747,7 +739,53 @@
             <studentHintRequest></studentHintRequest>
             <stepSuccessfulCompletion></stepSuccessfulCompletion>
             <stepStudentError></stepStudentError>
-            <uniqueID>65</uniqueID>
+            <uniqueID>7</uniqueID>
+            <message>
+                <verb>NotePropertySet</verb>
+                <properties>
+                    <MessageType>InterfaceAction</MessageType>
+                    <Selection>
+                        <value>FinalAnswerOnesStripe</value>
+                    </Selection>
+                    <Action>
+                        <value>UpdateTextField</value>
+                    </Action>
+                    <Input>
+                        <value>6</value>
+                    </Input>
+                    <transaction_id>T6c43f3e2-a5ce-4d1d-b497-e9462059eb8c</transaction_id>
+                </properties>
+            </message>
+            <buggyMessage>No, this is not correct.</buggyMessage>
+            <successMessage></successMessage>
+            <hintMessage>Please enter '6' in the highlighted field.</hintMessage>
+            <callbackFn></callbackFn>
+            <actionType>Correct Action</actionType>
+            <oldActionType>Correct Action</oldActionType>
+            <checkedStatus>NO-MODEL</checkedStatus>
+            <matcher>
+                <matcherType>ExactMatcher</matcherType>
+                <matcherParameter name="selection">FinalAnswerOnesStripe</matcherParameter>
+                <matcherParameter name="action">UpdateTextField</matcherParameter>
+                <matcherParameter name="input">6</matcherParameter>
+                <matcherParameter name="actor">Student</matcherParameter>
+            </matcher>
+        </actionLabel>
+        <preCheckedStatus>Never Checked</preCheckedStatus>
+        <rule>
+            <text>unnamed</text>
+            <indicator>-1</indicator>
+        </rule>
+        <sourceID>4</sourceID>
+        <destID>5</destID>
+        <traversalCount>0</traversalCount>
+    </edge>
+    <edge>
+        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
+            <studentHintRequest></studentHintRequest>
+            <stepSuccessfulCompletion></stepSuccessfulCompletion>
+            <stepStudentError></stepStudentError>
+            <uniqueID>9</uniqueID>
             <message>
                 <verb>NotePropertySet</verb>
                 <properties>
@@ -759,69 +797,23 @@
                         <value>UpdateTextField</value>
                     </Action>
                     <Input>
-                        <value>2</value>
+                        <value>3</value>
                     </Input>
-                    <transaction_id>Tb24a0444-bb6b-4f1d-bada-9782faf30a13</transaction_id>
+                    <transaction_id>T03c2ba64-302b-4562-aa6c-607c04d3ab02</transaction_id>
                 </properties>
             </message>
             <buggyMessage>No, this is not correct.</buggyMessage>
             <successMessage></successMessage>
-            <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
+            <hintMessage>Please enter '3' in the highlighted field.</hintMessage>
             <callbackFn></callbackFn>
             <actionType>Correct Action</actionType>
             <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>SUCCESS</checkedStatus>
+            <checkedStatus>Never Checked</checkedStatus>
             <matcher>
                 <matcherType>ExactMatcher</matcherType>
                 <matcherParameter name="selection">FinalAnswerTensStripe</matcherParameter>
                 <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">2</matcherParameter>
-                <matcherParameter name="actor">Student</matcherParameter>
-            </matcher>
-        </actionLabel>
-        <preCheckedStatus>SUCCESS</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>33</sourceID>
-        <destID>34</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="true" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>67</uniqueID>
-            <message>
-                <verb>NotePropertySet</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>FinalAnswerOnesStripe</value>
-                    </Selection>
-                    <Action>
-                        <value>UpdateTextField</value>
-                    </Action>
-                    <Input>
-                        <value>2</value>
-                    </Input>
-                    <transaction_id>Ta93151eb-34c4-4432-b72c-a79b5a0d0317</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>SUCCESS</checkedStatus>
-            <matcher>
-                <matcherType>ExactMatcher</matcherType>
-                <matcherParameter name="selection">FinalAnswerOnesStripe</matcherParameter>
-                <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">2</matcherParameter>
+                <matcherParameter name="input">3</matcherParameter>
                 <matcherParameter name="actor">Student</matcherParameter>
             </matcher>
         </actionLabel>
@@ -830,54 +822,8 @@
             <text>unnamed</text>
             <indicator>-1</indicator>
         </rule>
-        <sourceID>34</sourceID>
-        <destID>35</destID>
-        <traversalCount>0</traversalCount>
-    </edge>
-    <edge>
-        <actionLabel preferPathMark="false" minTraversals="1" maxTraversals="1">
-            <studentHintRequest></studentHintRequest>
-            <stepSuccessfulCompletion></stepSuccessfulCompletion>
-            <stepStudentError></stepStudentError>
-            <uniqueID>69</uniqueID>
-            <message>
-                <verb>NotePropertySet</verb>
-                <properties>
-                    <MessageType>InterfaceAction</MessageType>
-                    <Selection>
-                        <value>FinalAnswerOnesStripe</value>
-                    </Selection>
-                    <Action>
-                        <value>UpdateTextField</value>
-                    </Action>
-                    <Input>
-                        <value>2</value>
-                    </Input>
-                    <transaction_id>Tf30be753-7787-4956-9aa5-9e57bd13a371</transaction_id>
-                </properties>
-            </message>
-            <buggyMessage>No, this is not correct.</buggyMessage>
-            <successMessage></successMessage>
-            <hintMessage>Please enter '2' in the highlighted field.</hintMessage>
-            <callbackFn></callbackFn>
-            <actionType>Correct Action</actionType>
-            <oldActionType>Correct Action</oldActionType>
-            <checkedStatus>SUCCESS</checkedStatus>
-            <matcher>
-                <matcherType>ExactMatcher</matcherType>
-                <matcherParameter name="selection">FinalAnswerOnesStripe</matcherParameter>
-                <matcherParameter name="action">UpdateTextField</matcherParameter>
-                <matcherParameter name="input">2</matcherParameter>
-                <matcherParameter name="actor">Student</matcherParameter>
-            </matcher>
-        </actionLabel>
-        <preCheckedStatus>Never Checked</preCheckedStatus>
-        <rule>
-            <text>unnamed</text>
-            <indicator>-1</indicator>
-        </rule>
-        <sourceID>33</sourceID>
-        <destID>36</destID>
+        <sourceID>5</sourceID>
+        <destID>6</destID>
         <traversalCount>0</traversalCount>
     </edge>
     <EdgesGroups ordered="true"></EdgesGroups>

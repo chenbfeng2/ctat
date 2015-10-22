@@ -12,6 +12,9 @@
    (multislot finalValues)
    (multislot subgoals) 
    (slot done) 
+    (multislot Borrow)
+    (multislot convertedSubtractor)
+    (multislot convertedSubtrend)
  ;  (slot description)
    (multislot interface-elements)
 )
@@ -21,9 +24,15 @@
 (deftemplate MAIN::negative
     (multislot subtractor)
     (multislot subtrend))
-(deftemplate MAIN::
-	(slot name)
-    (multislot borrowValue))
+(deftemplate MAIN::MotifyBorrows
+    (slot borrowValue)
+	(multislot borrowtarget))
+(deftemplate MAIN::convertTens
+    (slot tensAfterBorrow)
+    (multislot targetTens))
+(deftemplate MAIN::convertOnes
+	(slot onesAfterBorrow)
+    (multislot targetOnes))
 (deftemplate MAIN::finalSub
     (multislot subtractor)
     (multislot subtrend))
